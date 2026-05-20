@@ -12,7 +12,7 @@ class ColorManager {
   static Color white = Colors.white;
 }
 
-// adding a method to color using extension keyword
+// adding a method to color class using extension keyword
 extension HexColor on Color {
   static Color fromStringToHex(String colorCode) {
     colorCode = colorCode.replaceAll('#', '');
