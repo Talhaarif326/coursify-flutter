@@ -9,7 +9,9 @@ class ColorManager {
   static Color primaryOpacity70 = HexColor.fromStringToHex(
     '#B33B7597',
   );
+  static Color darkPrimary = HexColor.fromStringToHex('#1F5070');
   static Color white = Colors.white;
+  static Color error = HexColor.fromStringToHex('#FF0000');
 }
 
 // adding a method to color class using extension keyword
