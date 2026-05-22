@@ -5,6 +5,7 @@ import 'package:project_on_clean_architecture/presentation/login/login_view.dart
 import 'package:project_on_clean_architecture/presentation/main/main_view.dart';
 import 'package:project_on_clean_architecture/presentation/onbording/onbording_view.dart';
 import 'package:project_on_clean_architecture/presentation/register/register_view.dart';
+import 'package:project_on_clean_architecture/presentation/resourcses/string_manager.dart';
 import 'package:project_on_clean_architecture/presentation/splash/splash_view.dart';
 
 class RoutesManager {
@@ -45,8 +46,8 @@ class RoutesGenerator {
     return MaterialPageRoute(
       builder: (_) {
         return Scaffold(
-          appBar: AppBar(title: Text("invalid Route")),
-          body: Center(child: Text("invalid Route")),
+          appBar: AppBar(title: Text(AppString.routeNotFound)),
+          body: Center(child: Text(AppString.routeNotFound)),
         );
       },
     );
