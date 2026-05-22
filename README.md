@@ -94,23 +94,3 @@ flutter run
 <div align="center">
 <sub>Built with Flutter · Clean Architecture · MVVM</sub>
 </div>
-
-## Connect With Me
-
-<div align="center">
-
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/TalhaArif794)
-&nbsp;
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/talha-arif-247b67291)
-&nbsp;
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Talhaarif326)
-
-<br/>
-
-📫 Reach me on X/Twitter **[@TalhaArif794](https://x.com/TalhaArif794)**
-&nbsp;·&nbsp;
-💼 Open to Flutter opportunities
-&nbsp;·&nbsp;
-🔗 [github.com/Talhaarif326](https://github.com/Talhaarif326)
-
-</div>
