@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_on_clean_architecture/presentation/color_manager.dart';
-import 'package:project_on_clean_architecture/presentation/style_manager.dart';
-import 'package:project_on_clean_architecture/presentation/values_manger.dart';
+import 'package:project_on_clean_architecture/presentation/resourcses/color_manager.dart';
+import 'package:project_on_clean_architecture/presentation/resourcses/style_manager.dart';
+import 'package:project_on_clean_architecture/presentation/resourcses/values_manger.dart';
 
 ThemeData getThemeDate() {
   return ThemeData(
