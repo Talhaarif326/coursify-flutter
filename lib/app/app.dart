@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_on_clean_architecture/presentation/resourcses/routes_manager.dart';
+import 'package:project_on_clean_architecture/presentation/resourcses/theme_manager.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp._internal(); // named private constructor
@@ -16,6 +18,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      theme: getThemeDate(),
+      onGenerateRoute: RoutesGenerator.getRoute,
+      initialRoute: RoutesManager.splashRoute,
+      debugShowCheckedModeBanner: false,
+    );
   }
 }

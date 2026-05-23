@@ -81,7 +81,7 @@ ThemeData getThemeDate() {
     ),
 
     // input feild theme ( Form feilds)
-    inputDecorationTheme: InputDecoration(
+    inputDecorationTheme: InputDecorationThemeData(
       contentPadding: EdgeInsets.all(AppPadding.p8),
       labelStyle: getRegularStyle(color: ColorManager.grey),
       hintStyle: getRegularStyle(color: ColorManager.grey),
