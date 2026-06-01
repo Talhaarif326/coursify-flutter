@@ -1,0 +1,83 @@
+<svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" width="400" height="380">
+  <!-- Background globe circle -->
+  <circle cx="200" cy="195" r="148" fill="#EEF0FF"/>
+
+  <!-- Globe outline -->
+  <circle cx="200" cy="195" r="120" fill="none" stroke="#C8C4FF" stroke-width="2" opacity="0.6"/>
+  <!-- Globe latitude lines -->
+  <ellipse cx="200" cy="195" rx="120" ry="40" fill="none" stroke="#C8C4FF" stroke-width="1.5" opacity="0.45"/>
+  <ellipse cx="200" cy="195" rx="120" ry="75" fill="none" stroke="#C8C4FF" stroke-width="1.5" opacity="0.3"/>
+  <!-- Globe longitude lines -->
+  <line x1="200" y1="75" x2="200" y2="315" stroke="#C8C4FF" stroke-width="1.5" opacity="0.45"/>
+  <path d="M 140,88 Q 200,145 140,302" stroke="#C8C4FF" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M 260,88 Q 200,145 260,302" stroke="#C8C4FF" stroke-width="1.2" fill="none" opacity="0.3"/>
+
+  <!-- Globe continent blobs -->
+  <ellipse cx="175" cy="175" rx="30" ry="22" fill="#B0AAFF" opacity="0.35" transform="rotate(-15, 175, 175)"/>
+  <ellipse cx="235" cy="195" rx="20" ry="15" fill="#B0AAFF" opacity="0.28" transform="rotate(10, 235, 195)"/>
+  <ellipse cx="188" cy="225" rx="18" ry="12" fill="#B0AAFF" opacity="0.22"/>
+
+  <!-- Heart chat bubble (center) -->
+  <rect x="162" y="165" width="76" height="56" rx="16" fill="#7C6FF7"/>
+  <polygon points="170,221 160,240 190,221" fill="#7C6FF7"/>
+  <!-- Heart icon -->
+  <path d="M200,195 C200,188 192,183 186,188 C182,191 182,197 200,210 C218,197 218,191 214,188 C208,183 200,188 200,195 Z" fill="white"/>
+
+  <!-- Avatar top (woman, hair bun) -->
+  <g transform="translate(200, 60)">
+    <circle r="28" fill="#F4F5FF" stroke="#C8C4FF" stroke-width="2"/>
+    <circle cy="-5" r="11" fill="#F5CBA7"/>
+    <ellipse cy="10" rx="16" ry="10" fill="#F5CBA7"/>
+    <!-- Hair bun -->
+    <circle cy="-17" r="8" fill="#5D4037"/>
+    <ellipse cx="0" cy="-10" rx="12" ry="8" fill="#5D4037"/>
+    <!-- Shirt -->
+    <ellipse cy="17" rx="14" ry="7" fill="#7C6FF7"/>
+  </g>
+
+  <!-- Avatar left (man) -->
+  <g transform="translate(72, 195)">
+    <circle r="26" fill="#F4F5FF" stroke="#C8C4FF" stroke-width="2"/>
+    <circle cy="-4" r="10" fill="#FDBCB4"/>
+    <ellipse cy="10" rx="15" ry="9" fill="#FDBCB4"/>
+    <!-- Hair -->
+    <ellipse cy="-13" rx="11" ry="7" fill="#3E2723"/>
+    <!-- Shirt -->
+    <ellipse cy="16" rx="13" ry="7" fill="#4FC3F7"/>
+  </g>
+
+  <!-- Avatar right (man, darker skin) -->
+  <g transform="translate(328, 195)">
+    <circle r="26" fill="#F4F5FF" stroke="#C8C4FF" stroke-width="2"/>
+    <circle cy="-4" r="10" fill="#C68642"/>
+    <ellipse cy="10" rx="15" ry="9" fill="#C68642"/>
+    <!-- Hair -->
+    <ellipse cy="-13" rx="11" ry="7" fill="#1A1A1A"/>
+    <!-- Shirt -->
+    <ellipse cy="16" rx="13" ry="7" fill="#FFB347"/>
+  </g>
+
+  <!-- Avatar bottom (woman) -->
+  <g transform="translate(200, 330)">
+    <circle r="26" fill="#F4F5FF" stroke="#C8C4FF" stroke-width="2"/>
+    <circle cy="-4" r="10" fill="#FDBCB4"/>
+    <ellipse cy="10" rx="15" ry="9" fill="#FDBCB4"/>
+    <!-- Hair -->
+    <ellipse cy="-12" rx="11" ry="8" fill="#8D5524"/>
+    <!-- Shirt coral -->
+    <ellipse cy="16" rx="13" ry="7" fill="#FF7F7F"/>
+  </g>
+
+  <!-- Connection lines from center bubble to avatars -->
+  <line x1="200" y1="165" x2="200" y2="90" stroke="#C8C4FF" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.6"/>
+  <line x1="162" y1="193" x2="100" y2="195" stroke="#C8C4FF" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.6"/>
+  <line x1="238" y1="193" x2="302" y2="195" stroke="#C8C4FF" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.6"/>
+  <line x1="200" y1="221" x2="200" y2="303" stroke="#C8C4FF" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.6"/>
+
+  <!-- Small decorative dots -->
+  <circle cx="290" cy="90" r="6" fill="#FFB347" opacity="0.7"/>
+  <circle cx="115" cy="298" r="5" fill="#7C6FF7" opacity="0.3"/>
+  <circle cx="340" cy="310" r="8" fill="#EEF0FF" stroke="#B0AAFF" stroke-width="2"/>
+  <!-- Heart accent -->
+  <path d="M295,130 C295,127 291,125 289,127 C287,129 287,132 295,137 C303,132 303,129 301,127 C299,125 295,127 295,130 Z" fill="#FF6B8A" opacity="0.7"/>
+</svg>

@@ -1,0 +1,46 @@
+<svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" width="400" height="380">
+  <!-- Background glow circle -->
+  <ellipse cx="200" cy="190" rx="160" ry="155" fill="#EEF0FF" />
+
+  <!-- Paper plane -->
+  <g transform="translate(260, 280) rotate(-30)">
+    <polygon points="0,0 30,-10 10,15" fill="#7C6FF7" opacity="0.85"/>
+    <polygon points="0,0 10,15 5,8" fill="#5B52D6"/>
+  </g>
+
+  <!-- Dashed arc path (decorative) -->
+  <path d="M 110 310 Q 190 200 290 160" stroke="#B0AAFF" stroke-width="2" stroke-dasharray="6,5" fill="none"/>
+
+  <!-- Main phone body -->
+  <rect x="115" y="60" width="130" height="230" rx="22" ry="22" fill="#1A1A2E" />
+  <rect x="122" y="72" width="116" height="206" rx="14" ry="14" fill="#F4F5FF" />
+  <!-- Notch -->
+  <rect x="163" y="63" width="34" height="10" rx="5" fill="#1A1A2E"/>
+
+  <!-- Chat bubble 1 (received - left) -->
+  <rect x="130" y="110" width="72" height="26" rx="10" fill="#7C6FF7"/>
+  <rect x="130" y="143" width="55" height="14" rx="7" fill="#7C6FF7" opacity="0.5"/>
+  <!-- Avatar left -->
+  <circle cx="122" cy="123" r="14" fill="#FFB347"/>
+  <circle cx="122" cy="118" r="6" fill="#FF8C00"/>
+  <ellipse cx="122" cy="130" rx="9" ry="6" fill="#FF8C00"/>
+
+  <!-- Chat bubble 2 (sent - right) -->
+  <rect x="168" y="172" width="72" height="26" rx="10" fill="#7C6FF7"/>
+  <rect x="183" y="204" width="55" height="14" rx="7" fill="#D0CDFF" opacity="0.7"/>
+  <!-- Avatar right -->
+  <circle cx="248" cy="185" r="14" fill="#A0D8EF"/>
+  <circle cx="248" cy="180" r="6" fill="#4FA3C7"/>
+  <ellipse cx="248" cy="192" rx="9" ry="6" fill="#4FA3C7"/>
+
+  <!-- Typing indicator bubble -->
+  <rect x="130" y="225" width="52" height="22" rx="11" fill="#E8E6FF"/>
+  <circle cx="145" cy="236" r="4" fill="#9990F5"/>
+  <circle cx="156" cy="236" r="4" fill="#9990F5"/>
+  <circle cx="167" cy="236" r="4" fill="#9990F5"/>
+
+  <!-- Floating small decorative dots -->
+  <circle cx="92" cy="100" r="7" fill="#B0AAFF" opacity="0.5"/>
+  <circle cx="300" cy="230" r="5" fill="#7C6FF7" opacity="0.35"/>
+  <circle cx="310" cy="120" r="9" fill="#EEF0FF" stroke="#B0AAFF" stroke-width="2"/>
+</svg>

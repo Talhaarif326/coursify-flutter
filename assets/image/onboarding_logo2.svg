@@ -1,0 +1,56 @@
+<svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg" width="400" height="380">
+  <!-- Background soft glow -->
+  <ellipse cx="200" cy="195" rx="155" ry="150" fill="#EEF0FF"/>
+
+  <!-- Left phone (slightly tilted left) -->
+  <g transform="translate(80, 70) rotate(-10, 65, 140)">
+    <rect x="0" y="0" width="120" height="210" rx="20" fill="#1A1A2E"/>
+    <rect x="8" y="12" width="104" height="186" rx="12" fill="#F4F5FF"/>
+    <rect x="43" y="4" width="30" height="9" rx="5" fill="#1A1A2E"/>
+    <!-- Bubble on left phone -->
+    <rect x="14" y="50" width="76" height="24" rx="10" fill="#7C6FF7"/>
+    <rect x="14" y="82" width="55" height="14" rx="7" fill="#B0AAFF" opacity="0.6"/>
+    <rect x="14" y="104" width="66" height="14" rx="7" fill="#B0AAFF" opacity="0.4"/>
+    <!-- Typing dots -->
+    <rect x="14" y="130" width="48" height="20" rx="10" fill="#E8E6FF"/>
+    <circle cx="26" cy="140" r="3.5" fill="#9990F5"/>
+    <circle cx="36" cy="140" r="3.5" fill="#9990F5"/>
+    <circle cx="46" cy="140" r="3.5" fill="#9990F5"/>
+  </g>
+
+  <!-- Right phone (slightly tilted right) -->
+  <g transform="translate(210, 90) rotate(8, 55, 130)">
+    <rect x="0" y="0" width="115" height="205" rx="20" fill="#1A1A2E"/>
+    <rect x="8" y="12" width="99" height="181" rx="12" fill="#F4F5FF"/>
+    <rect x="40" y="4" width="30" height="9" rx="5" fill="#1A1A2E"/>
+    <!-- Bubbles on right phone -->
+    <rect x="14" y="50" width="71" height="22" rx="10" fill="#7C6FF7"/>
+    <rect x="14" y="80" width="52" height="14" rx="7" fill="#B0AAFF" opacity="0.55"/>
+    <rect x="14" y="102" width="63" height="14" rx="7" fill="#B0AAFF" opacity="0.38"/>
+  </g>
+
+  <!-- Floating speech bubbles between phones -->
+  <!-- Big bubble left-center -->
+  <rect x="140" y="155" width="90" height="46" rx="16" fill="#7C6FF7" opacity="0.92"/>
+  <rect x="152" y="165" width="66" height="11" rx="5" fill="white" opacity="0.7"/>
+  <rect x="152" y="182" width="45" height="9" rx="5" fill="white" opacity="0.45"/>
+  <!-- Tail -->
+  <polygon points="148,201 134,215 162,201" fill="#7C6FF7" opacity="0.92"/>
+
+  <!-- Small bubble right -->
+  <rect x="255" y="195" width="70" height="36" rx="13" fill="white" stroke="#D0CDFF" stroke-width="2"/>
+  <rect x="264" y="203" width="52" height="9" rx="5" fill="#B0AAFF" opacity="0.6"/>
+  <rect x="264" y="216" width="35" height="8" rx="4" fill="#B0AAFF" opacity="0.4"/>
+
+  <!-- Flash / signal marks -->
+  <g transform="translate(195, 68)" fill="#FFD700" opacity="0.9">
+    <rect x="0" y="0" width="5" height="18" rx="2.5" transform="rotate(-20)"/>
+    <rect x="10" y="-5" width="5" height="24" rx="2.5"/>
+    <rect x="20" y="0" width="5" height="18" rx="2.5" transform="rotate(20)"/>
+  </g>
+
+  <!-- Decorative dots -->
+  <circle cx="88" cy="340" r="7" fill="#B0AAFF" opacity="0.4"/>
+  <circle cx="315" cy="80" r="8" fill="#EEF0FF" stroke="#B0AAFF" stroke-width="2"/>
+  <circle cx="335" cy="300" r="5" fill="#7C6FF7" opacity="0.25"/>
+</svg>
