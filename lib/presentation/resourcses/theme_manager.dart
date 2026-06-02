@@ -21,7 +21,7 @@ ThemeData getThemeDate() {
     // app bar theme
     appBarTheme: AppBarThemeData(
       centerTitle: true,
-      backgroundColor: ColorManager.primary,
+      backgroundColor: ColorManager.white,
       titleTextStyle: getRegularStyle(color: ColorManager.white),
     ),
 
@@ -115,5 +115,6 @@ ThemeData getThemeDate() {
         borderRadius: BorderRadius.circular(AppSize.s12),
       ),
     ),
+    scaffoldBackgroundColor: ColorManager.white
   );
 }

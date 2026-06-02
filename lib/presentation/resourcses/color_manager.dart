@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 // color manager class for the app
 class ColorManager {
-  static Color primary = HexColor.fromStringToHex('#9BB0C1');
+  static Color primary = HexColor.fromStringToHex('#447055');
   static Color darkGrey = HexColor.fromStringToHex("#525252");
   static Color grey = HexColor.fromStringToHex('#737477');
   static Color lightGrey = HexColor.fromStringToHex('#9E9E9E');
   static Color primaryOpacity70 = HexColor.fromStringToHex(
-    '#B39BB0C1',
+    '#B3447055',
   );
-  static Color darkPrimary = HexColor.fromStringToHex('#1F5070');
+  static Color darkPrimary = HexColor.fromStringToHex('#2F4E3B');
   static Color white = Colors.white;
   static Color error = HexColor.fromStringToHex('#FF0000');
 }

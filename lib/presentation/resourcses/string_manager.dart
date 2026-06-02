@@ -17,4 +17,5 @@ class AppString {
 
   static final String onBoardingSubTitle4 =
       'Join the community and start meaningful conversations today.';
+  static final String skip = "Skip";
 }

@@ -27,4 +27,9 @@ class AppSize {
   static const double s20 = 20;
   static const double s28 = 28;
   static const double s60 = 60;
+  static const double s100 = 100;
+}
+
+class DurationConstant {
+  static const int d300 = 300;
 }

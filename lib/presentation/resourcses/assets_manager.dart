@@ -11,4 +11,9 @@ class ImageAssets {
       '$imagePath/onboarding_logo3.svg';
   static const String onBoardingLogo4 =
       '$imagePath/onboarding_logo4.svg';
+
+  static const String hollowCircle = '$imagePath/hollow_circle.svg';
+  static const String leftArrow = '$imagePath/left_arrow.svg';
+  static const String rightArrow = '$imagePath/right_arrow.svg';
+  static const String solidCircle = '$imagePath/solid_circle.svg';
 }
