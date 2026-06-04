@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:project_on_clean_architecture/domain/model.dart';
 import 'package:project_on_clean_architecture/presentation/base/base_view_model.dart';
+import 'package:project_on_clean_architecture/presentation/resourcses/assets_manager.dart';
+import 'package:project_on_clean_architecture/presentation/resourcses/string_manager.dart';
 
 // ViewModel for the Onboarding Screen
 // extends BaseViewModel → gets shared start() and dispose()
@@ -15,6 +17,8 @@ class ObordingViewModel extends BaseViewModel
   // stream → output end of pipe (view listens from here)
   final StreamController<SliderViewObject> _streamController =
       StreamController<SliderViewObject>();
+  late final List<SliderObject> _list;
+  int _currentPageIndex = 0;
 
   // called when the screen is closed — always close the pipe to avoid memory leaks
   @override
@@ -25,25 +29,31 @@ class ObordingViewModel extends BaseViewModel
   // called when the screen first opens — push first slide data to view
   @override
   void start() {
-    // TODO: push first slide data to view
+    _list = _getListData();
+    postDataToStream();
   }
 
   // called when right arrow is tapped — increment index and push new slide data
   @override
-  void goToNextPage() {
-    // TODO: increment current index and push new data
+  int goToNextPage() {
+    _currentPageIndex++;
+    postDataToStream();
+    return _currentPageIndex;
   }
 
   // called when left arrow is tapped — decrement index and push new slide data
   @override
-  void goToPreviousSPage() {
-    // TODO: decrement current index and push new data
+  int goToPreviousSPage() {
+    _currentPageIndex--;
+    postDataToStream();
+    return _currentPageIndex;
   }
 
   // called when user swipes the page — update current index and push new slide data
   @override
   void onPageChanged(int index) {
-    // TODO: update current index and push new data
+    _currentPageIndex = index;
+    postDataToStream();
   }
 
   // called when skip button is tapped — navigate to login screen
@@ -62,7 +72,42 @@ class ObordingViewModel extends BaseViewModel
   // this is what the VIEW listens to for new SliderViewObject data
   @override
   Stream<SliderViewObject> get outputOfSliderViewObject =>
-      _streamController.stream;
+      _streamController.stream.map((sliderObject) => sliderObject);
+
+  // Private Functions
+
+  List<SliderObject> _getListData() => [
+    SliderObject(
+      AppString.onBoardingTitle1,
+      AppString.onBoardingSubTitle1,
+      ImageAssets.onBoardingLogo1,
+    ),
+    SliderObject(
+      AppString.onBoardingTitle2,
+      AppString.onBoardingSubTitle2,
+      ImageAssets.onBoardingLogo2,
+    ),
+    SliderObject(
+      AppString.onBoardingTitle3,
+      AppString.onBoardingSubTitle3,
+      ImageAssets.onBoardingLogo3,
+    ),
+    SliderObject(
+      AppString.onBoardingTitle4,
+      AppString.onBoardingSubTitle4,
+      ImageAssets.onBoardingLogo4,
+    ),
+  ];
+
+  void postDataToStream() {
+    _streamController.add(
+      SliderViewObject(
+        sliderObject: _list[_currentPageIndex],
+        numberOfPages: _list.length,
+        currentPageIndex: _currentPageIndex,
+      ),
+    );
+  }
 }
 
 // defines what ACTIONS the user can do on the onboarding screen

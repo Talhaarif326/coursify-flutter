@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:project_on_clean_architecture/domain/model.dart';
+import 'package:project_on_clean_architecture/presentation/onbording/obording_view_model.dart';
 
 import 'package:project_on_clean_architecture/presentation/resourcses/assets_manager.dart';
 import 'package:project_on_clean_architecture/presentation/resourcses/color_manager.dart';
@@ -22,35 +24,94 @@ class _OnbordingViewState extends State<OnbordingView> {
     initialPage: 0,
   );
 
-  late final List<SliderObject> _list = _getListData();
-
-  int _currentPageIndex = 0;
-
-  List<SliderObject> _getListData() => [
-    SliderObject(
-      AppString.onBoardingTitle1,
-      AppString.onBoardingSubTitle1,
-      ImageAssets.onBoardingLogo1,
-    ),
-    SliderObject(
-      AppString.onBoardingTitle2,
-      AppString.onBoardingSubTitle2,
-      ImageAssets.onBoardingLogo2,
-    ),
-    SliderObject(
-      AppString.onBoardingTitle3,
-      AppString.onBoardingSubTitle3,
-      ImageAssets.onBoardingLogo3,
-    ),
-    SliderObject(
-      AppString.onBoardingTitle4,
-      AppString.onBoardingSubTitle4,
-      ImageAssets.onBoardingLogo4,
-    ),
-  ];
+  final ObordingViewModel _viewModel = ObordingViewModel();
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    _viewModel.start();
+    super.initState();
+  }
+
+  Widget _getBottomSheet(SliderViewObject sliderViewObject) {
+    // bottom sheet builder
+    return Container(
+      color: ColorManager.primary,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // left arrow
+          Padding(
+            padding: EdgeInsets.all(AppPadding.p8),
+            child: SizedBox(
+              height: AppSize.s28,
+              width: AppSize.s28,
+              child: GestureDetector(
+                child: SvgPicture.asset(ImageAssets.leftArrow),
+                onTap: () {
+                  // go to previous slide
+                  _pageController.animateToPage(
+                    _viewModel.goToPreviousSPage(),
+                    duration: Duration(
+                      milliseconds: DurationConstant.d300,
+                    ),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
+            ),
+          ),
+          // bottom cicles
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              for (int i = 0; i < sliderViewObject.numberOfPages; i++)
+                Padding(
+                  padding: EdgeInsets.all(AppPadding.p8),
+                  child: _getBottomSheetCircles(
+                    i,
+                    sliderViewObject.currentPageIndex,
+                  ),
+                ),
+            ],
+          ),
+          // right arrow
+          Padding(
+            padding: EdgeInsets.all(AppPadding.p8),
+            child: SizedBox(
+              height: AppSize.s28,
+              width: AppSize.s28,
+              child: GestureDetector(
+                onTap: () {
+                  // go to next slide
+                  _pageController.animateToPage(
+                    _viewModel.goToNextPage(),
+                    duration: Duration(
+                      milliseconds: DurationConstant.d300,
+                    ),
+                    curve: Curves.easeInOut,
+                  );
+                },
+                child: SvgPicture.asset(ImageAssets.rightArrow),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _getBottomSheetCircles(int index, int currentPageIndex) {
+    if (index == currentPageIndex) {
+      return SvgPicture.asset(ImageAssets.solidCircle);
+    } else {
+      return SvgPicture.asset(ImageAssets.hollowCircle);
+    }
+  }
+
+  Widget _getContentWidget(SliderViewObject? sliderViewObject) {
+    if (sliderViewObject == null) {
+      return Container();
+    }
     return Scaffold(
       appBar: AppBar(
         elevation: AppSize.s1_5,
@@ -62,15 +123,15 @@ class _OnbordingViewState extends State<OnbordingView> {
       ),
       body: PageView.builder(
         controller: _pageController,
-        itemCount: _list.length,
+        itemCount: sliderViewObject.numberOfPages,
         onPageChanged: (pageIndex) {
-          setState(() {
-            _currentPageIndex = pageIndex;
-          });
+          _viewModel.onPageChanged(pageIndex);
         },
         itemBuilder: (context, index) {
           // onboarding page widget
-          return OnBoardingPage(sliderObject: _list[index]);
+          return OnBoardingPage(
+            sliderObject: sliderViewObject.sliderObject,
+          );
         },
       ),
       //bottom sheet
@@ -95,7 +156,7 @@ class _OnbordingViewState extends State<OnbordingView> {
                   ),
                 ),
               ),
-              _getBottomSheet(),
+              _getBottomSheet(sliderViewObject),
             ],
           ),
         ),
@@ -103,77 +164,23 @@ class _OnbordingViewState extends State<OnbordingView> {
     );
   }
 
-  Widget _getBottomSheet() {
-    // bottom sheet builder
-    return Container(
-      color: ColorManager.primary,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // left arrow
-          Padding(
-            padding: EdgeInsets.all(AppPadding.p8),
-            child: SizedBox(
-              height: AppSize.s28,
-              width: AppSize.s28,
-              child: GestureDetector(
-                child: SvgPicture.asset(ImageAssets.leftArrow),
-                onTap: () {
-                  // go to previous slide
-                  _pageController.animateToPage(
-                    _currentPageIndex - 1,
-                    duration: Duration(
-                      milliseconds: DurationConstant.d300,
-                    ),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
-            ),
-          ),
-          // bottom cicles
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              for (int i = 0; i < _list.length; i++)
-                Padding(
-                  padding: EdgeInsets.all(AppPadding.p8),
-                  child: _getBottomSheetCircles(i),
-                ),
-            ],
-          ),
-          // right arrow
-          Padding(
-            padding: EdgeInsets.all(AppPadding.p8),
-            child: SizedBox(
-              height: AppSize.s28,
-              width: AppSize.s28,
-              child: GestureDetector(
-                onTap: () {
-                  // go to next slide
-                  _pageController.animateToPage(
-                    _currentPageIndex + 1,
-                    duration: Duration(
-                      milliseconds: DurationConstant.d300,
-                    ),
-                    curve: Curves.easeInOut,
-                  );
-                },
-                child: SvgPicture.asset(ImageAssets.rightArrow),
-              ),
-            ),
-          ),
-        ],
-      ),
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<SliderViewObject>(
+      stream: _viewModel.outputOfSliderViewObject,
+      builder: (context, snapshot) {
+        if (snapshot.data == null) {
+          return Container();
+        }
+        return _getContentWidget(snapshot.data);
+      },
     );
   }
 
-  Widget _getBottomSheetCircles(int index) {
-    if (index == _currentPageIndex) {
-      return SvgPicture.asset(ImageAssets.solidCircle);
-    } else {
-      return SvgPicture.asset(ImageAssets.hollowCircle);
-    }
+  @override
+  void dispose() {
+    _viewModel.dispose();
+    super.dispose();
   }
 }
 
