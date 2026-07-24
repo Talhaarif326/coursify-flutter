@@ -28,9 +28,7 @@ class RoutesGenerator {
       case (RoutesManager.registerRoute):
         return MaterialPageRoute(builder: (_) => RegisterView());
       case (RoutesManager.forgotPasswordRoute):
-        return MaterialPageRoute(
-          builder: (_) => ForgotPasswordView(),
-        );
+        return MaterialPageRoute(builder: (_) => ForgotPasswordView());
       case (RoutesManager.detailsRoute):
         return MaterialPageRoute(builder: (_) => DetailsView());
       case (RoutesManager.onBordingRoute):
