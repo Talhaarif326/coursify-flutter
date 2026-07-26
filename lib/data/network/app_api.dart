@@ -25,6 +25,10 @@ abstract class AppClient {
   // Retrofit generates the code to send this request and automatically
   // convert the JSON response into an AuthenticationResponse object
   // (via AuthenticationResponse.fromJson).
+  @FormUrlEncoded()
   @POST("/Customers/Login")
-  Future<AuthenticationResponse> login();
+  Future<AuthenticationResponse> login(
+    @Field("email") String email,
+    @Field("password") String password,
+  );
 }

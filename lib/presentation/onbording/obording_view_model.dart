@@ -65,8 +65,7 @@ class ObordingViewModel extends BaseViewModel
   // returns the SINK (input end of pipe)
   // this is how we PUSH SliderViewObject data into the stream
   @override
-  Sink<SliderViewObject> get inputOfSliderViewObject =>
-      _streamController.sink;
+  Sink<SliderViewObject> get inputOfSliderViewObject => _streamController.sink;
 
   // returns the STREAM (output end of pipe)
   // this is what the VIEW listens to for new SliderViewObject data
@@ -133,10 +132,8 @@ abstract class ObordingViewModelOutputs {
 // this is the data object that travels through the stream pipe
 // contains everything the view needs to display one slide
 class SliderViewObject {
-  final SliderObject
-  sliderObject; // title, subtitle, image of current slide
-  final int
-  numberOfPages; // total number of slides (for dots indicator)
+  final SliderObject sliderObject; // title, subtitle, image of current slide
+  final int numberOfPages; // total number of slides (for dots indicator)
   final int
   currentPageIndex; // current slide index (for highlighting current dot)
 
